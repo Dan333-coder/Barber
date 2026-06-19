@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Crown Barbers | Demo Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body class="bg-[#121212] text-white overflow-x-hidden">
+  <div class="app-shell container-fluid">
+    <aside class="sidebar glass-panel">
+      <div class="sidebar-brand">
+        <div class="brand-mark">BC</div>
+        <div>
+          <p class="brand-title">Black Crown</p>
+          <p class="brand-subtitle">Barbers</p>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active">Dashboard</button>
+        <button class="nav-item">Customers</button>
+        <button class="nav-item">Membership</button>
+        <button class="nav-item">Rewards</button>
+        <button class="nav-item">Appointments</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div>
+          <p class="footer-label">Premium Demo</p>
+          <p class="footer-text">No backend • Pure frontend</p>
+        </div>
+        <div class="footer-icon">✦</div>
+      </div>
+    </aside>
+
+    <main class="content-shell">
+      <header class="topbar glass-panel">
+        <div>
+          <h1 class="page-title">Black Crown Barbers Dashboard</h1>
+          <p class="page-copy">Luxury management preview for elite salons with modern UX.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button">🔔</button>
+          <button class="profile-button">
+            <span class="profile-pill">BK</span>
+            <span class="profile-name">Anaya</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="stats-grid row g-3">
+        <article class="stat-card glass-panel animate-fade col-6 col-sm-4 col-md-3">
+          <p class="stat-label">Total Customers</p>
+          <h2 class="stat-value">1240</h2>
+        </article>
+        <article class="stat-card glass-panel animate-fade delay-1 col-6 col-sm-4 col-md-3">
+          <p class="stat-label">Today's Customers</p>
+          <h2 class="stat-value">58</h2>
+        </article>
+        <article class="stat-card glass-panel animate-fade delay-2 col-6 col-sm-4 col-md-3">
+          <p class="stat-label">Monthly Revenue</p>
+          <h2 class="stat-value">₹48,500</h2>
+        </article>
+        <article class="stat-card glass-panel animate-fade delay-3 col-6 col-sm-4 col-md-3">
+          <p class="stat-label">Active Members</p>
+          <h2 class="stat-value">320</h2>
+        </article>
+        <article class="stat-card glass-panel animate-fade delay-4 col-6 col-sm-4 col-md-3">
+          <p class="stat-label">Rewards Available</p>
+          <h2 class="stat-value">12</h2>
+        </article>
+      </section>
+
+      <section class="dashboard-grid row g-3">
+        <div class="panel glass-panel animate-fade delay-5 col-12 col-md-6">
+          <div class="panel-header">
+            <h3>Revenue Overview</h3>
+            <span class="badge gold">Live Demo</span>
+          </div>
+          <div class="chart chart-line" id="revenueChart"></div>
+        </div>
+
+        <div class="panel glass-panel animate-fade delay-6 col-12 col-md-6">
+          <div class="panel-header">
+            <h3>Customer Growth</h3>
+            <span class="badge">Monthly</span>
+          </div>
+          <div class="chart chart-bar" id="growthChart"></div>
+        </div>
+
+        <div class="panel glass-panel animate-fade delay-7 recent-card col-12">
+          <div class="panel-header">
+            <h3>Recent Customers</h3>
+            <button class="secondary-btn">View All</button>
+          </div>
+          <ul class="customer-list">
+            <li><div><span class="customer-dot gold"></span> Raj Kumar</div><span>Gold Member</span></li>
+            <li><div><span class="customer-dot"></span> Sneha Patel</div><span>Silver Member</span></li>
+            <li><div><span class="customer-dot gold"></span> Arjun Mehta</div><span>Platinum Member</span></li>
+            <li><div><span class="customer-dot"></span> Meera Singh</div><span>Gold Member</span></li>
+            <li><div><span class="customer-dot"></span> Karan Joshi</div><span>Membership Renewed</span></li>
+          </ul>
+        </div>
+
+        <div class="panel glass-panel animate-fade delay-8 upcoming-card col-12">
+          <div class="panel-header">
+            <h3>Upcoming Appointments</h3>
+            <button class="secondary-btn">Schedule</button>
+          </div>
+          <div class="appointment-list">
+            <article><p>Raj Kumar</p><span>Beard Trim · May 29 · <strong class="status confirmed">Confirmed</strong></span></article>
+            <article><p>Dia Sharma</p><span>Signature Cut · May 29 · <strong class="status pending">Pending</strong></span></article>
+            <article><p>Vikram Jain</p><span>Grooming · May 30 · <strong class="status confirmed">Confirmed</strong></span></article>
+            <article><p>Priya Reddy</p><span>Royal Shave · Jun 01 · <strong class="status delayed">Delayed</strong></span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-row animate-fade delay-9">
+        <div class="panel glass-panel customers-panel col-12">
+          <div class="panel-header">
+            <h3>Customers</h3>
+            <div class="search-box"><input type="search" placeholder="Search customers" /><button>🔍</button></div>
+          </div>
+          <div class="customer-cards">
+            <article class="customer-card glass-panel">
+              <div class="customer-profile">
+                <div class="customer-avatar">RK</div>
+                <div>
+                  <h4>Raj Kumar</h4>
+                  <p>Gold Member</p>
+                </div>
+              </div>
+              <p>Phone: +91 98765 43210</p>
+              <p>Haircuts: 8 / 10</p>
+              <div class="progress-wrap"><div class="progress-bar" style="width:80%"></div></div>
+              <p class="reward-text">Next Reward: Free Hair Wash</p>
+            </article>
+            <article class="customer-card glass-panel">
+              <div class="customer-profile">
+                <div class="customer-avatar">SP</div>
+                <div>
+                  <h4>Sneha Patel</h4>
+                  <p>Silver Member</p>
+                </div>
+              </div>
+              <p>Phone: +91 91234 56789</p>
+              <p>Haircuts: 5 / 10</p>
+              <div class="progress-wrap"><div class="progress-bar" style="width:50%"></div></div>
+              <p class="reward-text">Next Reward: 20% Discount</p>
+            </article>
+            <article class="customer-card glass-panel">
+              <div class="customer-profile">
+                <div class="customer-avatar gold-avatar">AM</div>
+                <div>
+                  <h4>Arjun Mehta</h4>
+                  <p>Platinum Member</p>
+                </div>
+              </div>
+              <p>Phone: +91 99876 54321</p>
+              <p>Haircuts: 10 / 10</p>
+              <div class="progress-wrap"><div class="progress-bar gold" style="width:100%"></div></div>
+              <p class="reward-text">Next Reward: VIP Upgrade</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-row membership-row animate-fade delay-10">
+        <div class="panel glass-panel pricing-panel col-12">
+          <div class="panel-header">
+            <h3>Membership Packages</h3>
+            <span class="badge gold">Popular</span>
+          </div>
+          <div class="pricing-grid">
+            <article class="pricing-card glass-panel silver">
+              <h4>Silver Plan</h4>
+              <p class="price">₹499<span>/month</span></p>
+              <ul>
+                <li>Priority booking</li>
+                <li>3 grooming perks</li>
+                <li>Complimentary drink</li>
+              </ul>
+              <button class="primary-btn">Choose Silver</button>
+            </article>
+            <article class="pricing-card glass-panel gold-plan">
+              <h4>Gold Plan</h4>
+              <p class="price">₹999<span>/month</span></p>
+              <ul>
+                <li>Exclusive discounts</li>
+                <li>Free styling session</li>
+                <li>VIP lounge access</li>
+              </ul>
+              <button class="primary-btn">Choose Gold</button>
+            </article>
+            <article class="pricing-card glass-panel platinum">
+              <h4>Platinum Plan</h4>
+              <p class="price">₹1999<span>/month</span></p>
+              <ul>
+                <li>Unlimited upgrades</li>
+                <li>Personal stylist</li>
+                <li>Priority support</li>
+              </ul>
+              <button class="primary-btn">Choose Platinum</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-row animate-fade delay-11 rewards-row">
+        <div class="panel glass-panel rewards-panel col-12">
+          <div class="panel-header">
+            <h3>Rewards Milestones</h3>
+            <span class="badge">Elite</span>
+          </div>
+          <div class="rewards-grid">
+            <article class="reward-card"><span class="reward-icon">✂</span><h4>10 Haircuts</h4><p>Free Hair Wash</p></article>
+            <article class="reward-card"><span class="reward-icon">⭐</span><h4>20 Haircuts</h4><p>50% Discount</p></article>
+            <article class="reward-card"><span class="reward-icon">💈</span><h4>30 Haircuts</h4><p>Free Grooming</p></article>
+            <article class="reward-card"><span class="reward-icon">👑</span><h4>50 Haircuts</h4><p>VIP Membership</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-row appointments-row animate-fade delay-12">
+        <div class="panel glass-panel appointments-panel col-12">
+          <div class="panel-header">
+            <h3>Appointment Preview</h3>
+            <button class="secondary-btn">Manage</button>
+          </div>
+          <div class="appointment-grid">
+            <article class="appointment-card"><h4>Raj Kumar</h4><p>Service: Beard Trim</p><p>Date: May 29</p><span class="status confirmed">Confirmed</span></article>
+            <article class="appointment-card"><h4>Dia Sharma</h4><p>Service: Signature Cut</p><p>Date: May 29</p><span class="status pending">Pending</span></article>
+            <article class="appointment-card"><h4>Vikram Jain</h4><p>Service: Grooming</p><p>Date: May 30</p><span class="status confirmed">Confirmed</span></article>
+            <article class="appointment-card"><h4>Priya Reddy</h4><p>Service: Royal Shave</p><p>Date: Jun 01</p><span class="status delayed">Delayed</span></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <button class="fab" aria-label="Add appointment">＋</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
